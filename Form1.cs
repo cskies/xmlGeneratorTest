@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Windows.Forms;
 
 namespace XmlGenerator
@@ -20,15 +21,18 @@ namespace XmlGenerator
 
 
             /////////////////////////// app saved the xml file
-            // Displays an OpenFileDialog so the user can select a Cursor.  
-            OpenFileDialog openFileDialog1 = new OpenFileDialog();
-            openFileDialog1.Title = "Select xml file";
-            openFileDialog1.Filter = "XML files(*.xml) | *.xml";
+            // Shows a dialog to select the xml file
+            var file = new OpenFileDialog();
+            file.Title = "Select xml file";
+            file.Filter = "XML files(*.xml) | *.xml";
             Console.WriteLine();
+
+
+
             // Show the Dialog.  
             // If the user clicked OK in the dialog and  
             // a .CUR file was selected, open it.  
-            if (openFileDialog1.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            if (file.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
                 // Assign the cursor in the Stream to the Form's Cursor property.  
                 //this.Cursor = new Cursor(openFileDialog1.OpenFile());
@@ -36,6 +40,12 @@ namespace XmlGenerator
             }
 
             Console.WriteLine();
+
+            //File.Copy("C:\\Users\\conrado.moura\\Desktop\\books.xml", "C:\\Users\\conrado.moura\\Desktop\\books222.xml");
+            var listagem = File.ReadAllText("C:\\Users\\conrado.moura\\Desktop\\7k.txt");
+            Console.WriteLine();
+
+
         }
     }
 }

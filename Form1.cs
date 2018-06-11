@@ -34,7 +34,11 @@ namespace XmlGenerator
                 ds.ReadXml(sr);
                 ds.WriteXmlSchema("Books50.xsd");
                 Console.WriteLine();
-                this.Close();
+                //this.Close();
+
+                
+
+
             }
         }
 

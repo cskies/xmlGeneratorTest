@@ -60,6 +60,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ArquivoImportacao.cs" />
+    <Compile Include="Books50.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Books50.xsd</DependentUpon>
+    </Compile>
     <Compile Include="ConnFactory.cs" />
     <Compile Include="DsForReport.cs">
       <DependentUpon>DsForReport.xsd</DependentUpon>
@@ -90,6 +95,17 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="Books50.xsc">
+      <DependentUpon>Books50.xsd</DependentUpon>
+    </None>
+    <None Include="Books50.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Books50.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Books50.xss">
+      <DependentUpon>Books50.xsd</DependentUpon>
+    </None>
     <None Include="DsForReport.xsc">
       <DependentUpon>DsForReport.xsd</DependentUpon>
     </None>

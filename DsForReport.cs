@@ -1,6 +1,8 @@
-﻿namespace XmlGenerator {
-    
-    
-    public partial class DsForReport {
+﻿namespace XmlGenerator
+{
+
+
+    public partial class DsForReport
+    {
     }
 }

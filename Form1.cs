@@ -1,51 +1,82 @@
 ﻿using System;
+using System.Data;
+using System.Data.SqlClient;
 using System.IO;
 using System.Windows.Forms;
 
 namespace XmlGenerator
 {
-    public partial class Form1 : Form
+    public partial class FrmxmlOpenTest : Form
     {
-        public Form1()
+        public FrmxmlOpenTest()
         {
             InitializeComponent();
-
-            
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnSelect_Click(object sender, EventArgs e)
         {
 
             //TODO: Conrado - Organize structure
             //transfer the logic below to a class diff this event. ie: another class outside this("presentation") proj
 
+            fileXml.Title = "Select xml file";
+            fileXml.Filter = "XML files(*.xml) | *.xml";
 
-            /////////////////////////// app saved the xml file
-            // Shows a dialog to select the xml file
-            var file = new OpenFileDialog();
-            file.Title = "Select xml file";
-            file.Filter = "XML files(*.xml) | *.xml";
-            Console.WriteLine();
-
-
-
-            // Show the Dialog.  
-            // If the user clicked OK in the dialog and  
-            // a .CUR file was selected, open it.  
-            if (file.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            if (fileXml.ShowDialog() == DialogResult.OK)
             {
-                // Assign the cursor in the Stream to the Form's Cursor property.  
-                //this.Cursor = new Cursor(openFileDialog1.OpenFile());
-                
+                var sr = new StreamReader(fileXml.FileName);
+                //MessageBox.Show(sr.ReadToEnd());
+                //this.Cursor = new Cursor(fileXml.OpenFile());
+
+                //sr.Close();
+
+                var ds = new DataSet();
+                ds.ReadXml(sr);
+                ds.WriteXmlSchema("Books50.xsd");
+                Console.WriteLine();
+                this.Close();
+            }
+        }
+
+        void ConnectionSql()
+        {
+            //set conn
+            var myConnection = new SqlConnection("user id=AdminAuditorBPO ;" +
+                                       "password=FMxYaKGC;server=SJCSRVVMDEV01;" +
+                                       "Trusted_Connection=yes;" +
+                                       "database=Auditor_WHIRLPOOL; " +
+                                       "connection timeout=30");
+
+            //open conn
+            try
+            {
+                myConnection.Open();
+            }
+            catch (Exception e)
+            {
+
+                Console.WriteLine(e.ToString());
             }
 
             Console.WriteLine();
-
-            //File.Copy("C:\\Users\\conrado.moura\\Desktop\\books.xml", "C:\\Users\\conrado.moura\\Desktop\\books222.xml");
-            var listagem = File.ReadAllText("C:\\Users\\conrado.moura\\Desktop\\7k.txt");
-            Console.WriteLine();
-
-
         }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        /// <summary>
+        /// TODO: Conrado - step after save xlm in db. Is necessary to generate report.
+        /// Probably in pdf
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnGenerate_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        
     }
 }

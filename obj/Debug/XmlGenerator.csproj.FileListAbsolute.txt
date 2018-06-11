@@ -2,7 +2,6 @@ D:\gsw dotnet projects\XmlGenerator\XmlGenerator\bin\Debug\XmlGenerator.exe.conf
 D:\gsw dotnet projects\XmlGenerator\XmlGenerator\bin\Debug\XmlGenerator.exe
 D:\gsw dotnet projects\XmlGenerator\XmlGenerator\bin\Debug\XmlGenerator.pdb
 D:\gsw dotnet projects\XmlGenerator\XmlGenerator\obj\Debug\XmlGenerator.csprojAssemblyReference.cache
-D:\gsw dotnet projects\XmlGenerator\XmlGenerator\obj\Debug\XmlGenerator.Form1.resources
 D:\gsw dotnet projects\XmlGenerator\XmlGenerator\obj\Debug\XmlGenerator.Properties.Resources.resources
 D:\gsw dotnet projects\XmlGenerator\XmlGenerator\obj\Debug\XmlGenerator.csproj.GenerateResource.cache
 D:\gsw dotnet projects\XmlGenerator\XmlGenerator\obj\Debug\XmlGenerator.csproj.CoreCompileInputs.cache
@@ -14,3 +13,5 @@ D:\gsw dotnet projects\XmlGenerator\XmlGenerator\bin\Debug\Microsoft.ReportViewe
 D:\gsw dotnet projects\XmlGenerator\XmlGenerator\obj\Debug\XmlGenerator.csproj.CopyComplete
 D:\gsw dotnet projects\XmlGenerator\XmlGenerator\bin\Debug\Microsoft.ReportViewer.WinForms.dll
 D:\gsw dotnet projects\XmlGenerator\XmlGenerator\bin\Debug\Microsoft.ReportViewer.WinForms.xml
+D:\gsw dotnet projects\XmlGenerator\XmlGenerator\obj\Debug\XmlGenerator.FrmxmlOpenTest.resources
+D:\gsw dotnet projects\XmlGenerator\XmlGenerator\bin\Debug\CrystalDecisions.CrystalReports.Engine.dll
